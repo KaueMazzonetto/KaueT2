@@ -1,165 +1,188 @@
-"use client";
+// app/page.tsx
 
-import { Button } from "@/componentes/ui/button,";
-import { Card, CardContent } from "@/components/ui/card,";
-import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import {
-  FaFileUpload,
-  FaSearch,
-  FaCheckCircle,
-  FaStar,
-} from "react-icons/fa";
+  FileText,
+  Briefcase,
+  Sparkles,
+  CheckCircle,
+} from "lucide-react";
 
 export default function Home() {
-  function handleCTA() {
-    toast.success("Funcionalidade de envio em breve 🚀");
-  }
-
   return (
-    <main className="min-h-screen bg-white">
-
-      {/* NAVBAR */}
-      <header className="border-b">
-        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <h1 className="font-bold text-lg">CVCheck</h1>
-
-          <nav className="hidden md:flex gap-6 text-sm">
-            <a href="#beneficios" className="hover:text-primary">Benefícios</a>
-            <a href="#como-funciona" className="hover:text-primary">Como funciona</a>
-          </nav>
-
-          <Button onClick={handleCTA}>Começar</Button>
-        </div>
-      </header>
-
+    <main className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 text-white">
       {/* HERO */}
-      <section className="container mx-auto px-4 py-20 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold">
-          Seu currículo pronto para{" "}
-          <span className="text-primary">ser aprovado</span>
-        </h1>
+      <section className="container mx-auto px-6 py-24">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div>
+            <span className="rounded-full border border-slate-700 bg-slate-800 px-4 py-1 text-sm text-slate-300">
+              Plataforma inteligente de currículos
+            </span>
 
-        <p className="mt-6 text-gray-600 max-w-xl mx-auto">
-          Analise seu currículo com inteligência e descubra exatamente o que
-          melhorar para conquistar mais entrevistas.
-        </p>
+            <h1 className="mt-6 text-5xl font-bold leading-tight">
+              Crie currículos profissionais e consiga mais entrevistas
+            </h1>
 
-        <div className="mt-8">
-          <Button size="lg" onClick={handleCTA}>
-            Enviar currículo
-          </Button>
+            <p className="mt-6 text-lg text-slate-300">
+              Monte currículos modernos, organizados e otimizados para vagas de
+              emprego em poucos minutos.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Button className="rounded-2xl px-8 py-6 text-lg">
+                Criar Currículo
+              </Button>
+
+              <Button
+                variant="outline"
+                className="rounded-2xl border-slate-600 bg-transparent px-8 py-6 text-lg text-white hover:bg-slate-800"
+              >
+                Ver Modelos
+              </Button>
+            </div>
+
+            <div className="mt-10 flex flex-wrap gap-6 text-sm text-slate-400">
+              <div className="flex items-center gap-2">
+                <CheckCircle size={18} />
+                Fácil de usar
+              </div>
+
+              <div className="flex items-center gap-2">
+                <CheckCircle size={18} />
+                Modelos modernos
+              </div>
+
+              <div className="flex items-center gap-2">
+                <CheckCircle size={18} />
+                Exportação em PDF
+              </div>
+            </div>
+          </div>
+
+          {/* CARD HERO */}
+          <div className="flex justify-center">
+            <Card className="w-full max-w-md rounded-3xl border-slate-800 bg-slate-900 shadow-2xl shadow-cyan-500/10">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-3">
+                  <div className="rounded-2xl bg-cyan-500/20 p-3">
+                    <FileText className="text-cyan-400" />
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-semibold">
+                      Currículo Inteligente
+                    </h3>
+                    <p className="text-sm text-slate-400">
+                      Design profissional automático
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-8 space-y-4">
+                  <div className="h-4 w-full rounded bg-slate-800"></div>
+                  <div className="h-4 w-5/6 rounded bg-slate-800"></div>
+                  <div className="h-4 w-4/6 rounded bg-slate-800"></div>
+
+                  <div className="mt-6 rounded-2xl bg-slate-800 p-4">
+                    <div className="mb-3 flex items-center gap-2">
+                      <Sparkles className="text-cyan-400" size={18} />
+                      <span className="text-sm">
+                        Sugestões automáticas
+                      </span>
+                    </div>
+
+                    <p className="text-sm text-slate-400">
+                      Melhoramos descrições e habilidades do currículo usando IA.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
       {/* BENEFÍCIOS */}
-      <section id="beneficios" className="bg-gray-50 py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-10">
-            Benefícios do sistema
+      <section className="container mx-auto px-6 py-16">
+        <div className="mb-12 text-center">
+          <h2 className="text-4xl font-bold">
+            Tudo para destacar seu perfil
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            <Card>
-              <CardContent className="p-6 space-y-3 text-center">
-                <FaSearch className="text-2xl mx-auto text-blue-600" />
-                <h3 className="font-semibold">Análise detalhada</h3>
-                <p className="text-sm text-gray-600">
-                  Identifica pontos fracos no seu currículo.
-                </p>
-              </CardContent>
-            </Card>
+          <p className="mt-4 text-slate-400">
+            Ferramentas modernas para criar currículos profissionais.
+          </p>
+        </div>
 
-            <Card>
-              <CardContent className="p-6 space-y-3 text-center">
-                <FaCheckCircle className="text-2xl mx-auto text-green-600" />
-                <h3 className="font-semibold">Correções rápidas</h3>
-                <p className="text-sm text-gray-600">
-                  Sugestões simples e práticas para melhorar.
-                </p>
-              </CardContent>
-            </Card>
+        <div className="grid gap-6 md:grid-cols-3">
+          <Card className="rounded-3xl border-slate-800 bg-slate-900">
+            <CardContent className="p-8">
+              <div className="mb-4 w-fit rounded-2xl bg-cyan-500/20 p-3">
+                <FileText className="text-cyan-400" />
+              </div>
 
-            <Card>
-              <CardContent className="p-6 space-y-3 text-center">
-                <FaStar className="text-2xl mx-auto text-yellow-500" />
-                <h3 className="font-semibold">Mais chances</h3>
-                <p className="text-sm text-gray-600">
-                  Aumente suas chances de conseguir entrevistas.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
+              <h3 className="text-2xl font-semibold">
+                Modelos Modernos
+              </h3>
+
+              <p className="mt-3 text-slate-400">
+                Escolha layouts profissionais para diferentes áreas.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="rounded-3xl border-slate-800 bg-slate-900">
+            <CardContent className="p-8">
+              <div className="mb-4 w-fit rounded-2xl bg-cyan-500/20 p-3">
+                <Briefcase className="text-cyan-400" />
+              </div>
+
+              <h3 className="text-2xl font-semibold">
+                Focado em Empregos
+              </h3>
+
+              <p className="mt-3 text-slate-400">
+                Currículos organizados para chamar atenção de recrutadores.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="rounded-3xl border-slate-800 bg-slate-900">
+            <CardContent className="p-8">
+              <div className="mb-4 w-fit rounded-2xl bg-cyan-500/20 p-3">
+                <Sparkles className="text-cyan-400" />
+              </div>
+
+              <h3 className="text-2xl font-semibold">
+                IA Integrada
+              </h3>
+
+              <p className="mt-3 text-slate-400">
+                Receba sugestões automáticas para melhorar seu currículo.
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
-      {/* COMO FUNCIONA */}
-      <section id="como-funciona" className="py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-10">
-            Como funciona
+      {/* CTA */}
+      <section className="container mx-auto px-6 py-24">
+        <div className="rounded-3xl border border-slate-800 bg-slate-900 p-12 text-center">
+          <h2 className="text-4xl font-bold">
+            Comece agora gratuitamente
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <FaFileUpload className="text-3xl mx-auto text-primary" />
-              <h3 className="mt-4 font-semibold">1. Envie</h3>
-              <p className="text-sm text-gray-600">
-                Faça upload do seu currículo.
-              </p>
-            </div>
-
-            <div>
-              <FaSearch className="text-3xl mx-auto text-primary" />
-              <h3 className="mt-4 font-semibold">2. Análise</h3>
-              <p className="text-sm text-gray-600">
-                O sistema analisa automaticamente.
-              </p>
-            </div>
-
-            <div>
-              <FaCheckCircle className="text-3xl mx-auto text-primary" />
-              <h3 className="mt-4 font-semibold">3. Melhore</h3>
-              <p className="text-sm text-gray-600">
-                Receba sugestões e melhore seu CV.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* PROVA SOCIAL */}
-      <section className="bg-gray-50 py-16">
-        <div className="container mx-auto px-4 text-center max-w-2xl">
-          <h2 className="text-3xl font-bold mb-6">
-            O que usuários dizem
-          </h2>
-
-          <p className="text-gray-600 italic">
-            “Melhorei meu currículo e consegui uma entrevista em poucos dias.
-            Muito fácil de usar!”
+          <p className="mx-auto mt-4 max-w-2xl text-slate-400">
+            Crie um currículo profissional em poucos minutos e aumente suas
+            chances de conseguir uma vaga.
           </p>
 
-          <span className="block mt-4 font-semibold">
-            — Usuário satisfeito
-          </span>
+          <Button className="mt-8 rounded-2xl px-10 py-6 text-lg">
+            Criar Meu Currículo
+          </Button>
         </div>
       </section>
-
-      {/* CTA FINAL */}
-      <section className="py-16 text-center">
-        <h2 className="text-3xl font-bold">
-          Comece agora gratuitamente
-        </h2>
-
-        <Button size="lg" className="mt-6" onClick={handleCTA}>
-          Analisar currículo
-        </Button>
-      </section>
-
-      {/* FOOTER */}
-      <footer className="border-t py-6 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} CVCheck
-      </footer>
     </main>
   );
 }
